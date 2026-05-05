@@ -16,6 +16,8 @@ public abstract class BaseScreen implements Screen, InputProcessor {
 
     private boolean paused;
 
+    public static State state;
+
     public BaseScreen(Game g){
         game = g;
 
@@ -50,4 +52,37 @@ public abstract class BaseScreen implements Screen, InputProcessor {
 
     public boolean isPaused(){ return false; }
 
+    public void setPaused(boolean b){
+        paused = b;
+    }
+
+    public void togglePaused(){
+        paused = !paused;
+    }
+
+    public void resize(int width, int height){
+        mainStage.getViewport().update(width, height, true);
+        uiStage.getViewport().update(width, height, true);
+    }
+
+    public void pause(){ }
+    public void resume(){ }
+    public void dispose(){ }
+    public void show(){ }
+    public void hide(){ }
+    //InputProcessor methods
+    public boolean keyDown(int keycode){ return false; }
+    public boolean keyUp(int keycode){ return false; }
+    public boolean keyTyped(char c){ return false; }
+    public boolean mouseMoved(int screenX, int screenY){ return false; }
+    public boolean scrolled(int amount){ return false; }
+    public boolean touchDown(int screenX, int screenY, int pointer, int button){
+        return false;
+    }
+    public boolean touchDragged(int screenX, int screenY, int pointer){
+        return false;
+    }
+    public boolean touchUp(int screenX, int screenY, int pointer, int button){
+        return false;
+    }
 }
