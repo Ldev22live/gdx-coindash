@@ -25,6 +25,7 @@ public class Main extends Game {
         FreeTypeFontGenerator.FreeTypeFontParameter fontParams = new FreeTypeFontGenerator.FreeTypeFontParameter();
         fontParams.size = 26;
         fontParams.color = Color.DARK_GRAY;
+        fontParams.characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789: ";
         font = generator.generateFont(fontParams);
         generator.dispose();
         setScreen(new GameScreen(this));
